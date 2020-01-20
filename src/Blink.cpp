@@ -5,19 +5,19 @@
  */
 
 #include <Arduino.h>
-uint32_t blah;
+uint32_t counter;
 
 void setup()
 {
   // initialize LED digital pin as an output.
   pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(115200);
-  blah = 0;
+  counter = 0;
 }
 
 void loop()
 {
-  blah++;
+  counter++;
 
   // turn the LED on (HIGH is the voltage level)
   digitalWrite(LED_BUILTIN, HIGH);
@@ -28,6 +28,6 @@ void loop()
    // wait for a second
   delay(1000);
 
-  Serial.print(F("Blinking #"));
-  Serial.println(blah);
+  Serial.print(F("Blink #"));
+  Serial.println(counter);
 }
